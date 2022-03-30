@@ -1,0 +1,129 @@
+.PostBody h1 {
+    @apply font-extrabold text-5xl mt-7 md:mt-14;
+}
+
+.PostBody h2 {
+    @apply font-extrabold text-4xl mt-6 md:mt-12;
+}
+
+.PostBody h3 {
+    @apply font-bold text-3xl mt-5 md:mt-10;
+}
+
+.PostBody h4 {
+    @apply font-semibold text-2xl mt-4 md:mt-8;
+}
+
+.PostBody h5 {
+    @apply font-medium text-xl mt-3 md:mt-6;
+}
+
+.PostBody h6 {
+    @apply font-medium text-lg mt-2 md:mt-4;
+}
+
+/**
+Tailwind "dark" variants do not work with CSS Modules
+We work it around using :global(.dark)
+For more info: https://github.com/tailwindlabs/tailwindcss/issues/3258#issuecomment-770215347
+*/
+:global(.dark) .PostBody h1,
+:global(.dark) .PostBody h2,
+:global(.dark) .PostBody h3,
+:global(.dark) .PostBody h4,
+:global(.dark) .PostBody h5,
+:global(.dark) .PostBody h6 {
+    @apply text-white;
+}
+
+.PostBody > p {
+    @apply text-lg leading-8 my-6;
+}
+
+.PostBody li {
+    @apply text-lg leading-8 my-2;
+}
+
+:global(.dark) .PostBody > p,
+:global(.dark) .PostBody li {
+    @apply text-gray-200;
+}
+
+.PostBody b,
+.PostBody strong {
+    @apply font-bold;
+}
+
+.PostBody pre {
+    @apply mb-8 text-sm text-current;
+}
+
+:global(.dark) .PostBody pre {
+    @apply bg-black-300 shadow-none;
+}
+
+.PostBody img,
+.PostBody video {
+    @apply rounded-lg;
+}
+
+.PostBody ul {
+    list-style: disc;
+
+    @apply pl-10 pb-2 mb-2;
+}
+
+.PostBody ol {
+    list-style: decimal;
+
+    @apply pl-5 pb-2 mb-2;
+}
+
+.PostBody blockquote {
+    @apply my-12 p-8 shadow-xl
+        font-medium text-gray-700 font-sans
+        border-l-[8px] border-primary-500 dark:bg-black-400
+        dark:text-gray-300;
+}
+
+.PostBody pre {
+    @apply my-2 rounded-3xl;
+}
+
+.PostBody code {
+    @apply rounded-lg;
+
+    word-break: break-word;
+}
+
+.PostBody pre > code {
+    @apply p-3 md:p-5 text-xs md:text-sm font-medium font-monospace block;
+
+    white-space: pre-wrap;
+}
+
+:global(.dark) .PostBody code {
+    @apply bg-black-400;
+}
+
+.PostBody p > code,
+.PostBody li > code {
+    @apply px-1 py-1 text-sm rounded-md;
+}
+
+:global(.dark) .PostBody p > code,
+:global(.dark) .PostBody li > code {
+    @apply bg-black-300;
+}
+
+.PostBody hr {
+    @apply mt-8 mb-6;
+}
+
+.PostBody p > a {
+    @apply font-medium underline;
+}
+
+:global(.dark) .PostBody p > a {
+    @apply text-primary-500;
+}

@@ -1,16 +1,33 @@
+@import "github-dark.css";
+
+@tailwind base;
+
+/* Start purging... */
+@tailwind components;
+@tailwind utilities;
+/* Stop purging. */
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
+
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+    @apply bg-white text-gray-800 dark:bg-black-500 dark:text-gray-300 p-0 m-0;
+}
+
+html.dark {
+    @apply bg-black-500;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
