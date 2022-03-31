@@ -8,17 +8,22 @@ This blog starter is the perfect foundation for writing your next blog, portfoli
 
 ## Features
 
-✅ Fully responsive Blog/Portfolio Site
-📄 Write your articles with all the power of MDX
-🧑‍🤝‍🧑 Ability to add multiple Authors
-⚡ Core Web Vitals = 100
-🚀 Search Engine Optimized (SEO) out-of-the-box
-📂 Sitemap and RSS generated automatically
-✨ Written with strict Typescript, validated with EsLint, formatted with Prettier
+- ✅ **Fully responsive Blog/Portfolio Site**
+- 📄 **Write your articles with all the power of MDX**
+- ⚡ **Core Web Vitals = 100**
+- 🚀 **Search Engine Optimized (SEO) out-of-the-box**
+- 📂 **Sitemap and RSS generated automatically**
+- ✨ **Written with strict Typescript, validated with EsLint, formatted with Prettier**
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
+
+```
+git clone https://github.com/makerkit/next-blog-kit
+```
+
+Rename your project and jump into the folder. Then, run the development server:
 
 ```bash
 npm run dev
@@ -28,7 +33,25 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Configuration
+### Setting the upstream folder
+
+If you want, reinitialize the git repository and set this repository as your upstream, so you can continue getting updates:
+
+```
+rm -rf .git
+git init
+git remote add upstream https://github.com/makerkit/next-blog-kit
+```
+
+To keep your repository up-to-date with this, use `git pull`:
+
+```
+git pull upstream main 
+```
+
+Solve the eventual conflicts and merge 😃
+
+### Configuration
 
 Open the configuration file at `./configuration.ts`. It will have the following content:
 
@@ -53,7 +76,7 @@ const configuration = {
 
 Update it with your own data, or leave as is to begin with.
 
-## Add Articles, Collections and Authors
+### Add Articles, Collections and Authors
 
 Before creating a blog post, we define which collection it belongs to and the author of the post.
 
