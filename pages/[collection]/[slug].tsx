@@ -1,7 +1,6 @@
 import Head from 'next/head';
 
 import {
-  compileMdx,
   getAllPosts,
   getPostBySlug,
   getPostsByCollection,
@@ -15,6 +14,7 @@ import Header from '~/components/Header';
 import PostsList from '~/components/PostsList';
 import LayoutContainer from '~/components/LayoutContainer';
 import Meta from '~/components/Meta';
+import { compileMdx } from '~/lib/blog/compile-mdx';
 
 type Props = {
   post: BlogPost;

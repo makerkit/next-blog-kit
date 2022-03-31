@@ -81,9 +81,8 @@ For more info: https://github.com/tailwindlabs/tailwindcss/issues/3258#issuecomm
 
 .PostBody blockquote {
     @apply my-12 p-8 shadow-xl
-        font-medium text-gray-700 font-sans
-        border-l-[8px] border-primary-500 dark:bg-black-400
-        dark:text-gray-300;
+        font-medium font-sans dark:text-gray-300
+        border-l-[8px] border-primary-500;
 }
 
 .PostBody pre {

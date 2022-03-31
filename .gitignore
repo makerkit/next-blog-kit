@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 .idea
+
+# generated
+public/rss.xml
+public/atom.xml
+public/rss.json
+public/robots.txt
+public/sitemap*.xml

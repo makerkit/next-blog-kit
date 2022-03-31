@@ -1,11 +1,8 @@
 import { join } from 'path';
 import { existsSync, readdirSync, readFileSync } from 'fs';
 import matter from 'gray-matter';
-import BlogPost from './blog-post';
 
-import rehypeHighlight from 'rehype-highlight';
-import rehypeSlug from 'rehype-slug';
-import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
+import BlogPost from './blog-post';
 
 const POSTS_DIRECTORY_NAME = '_posts';
 const COLLECTIONS_DIRECTORY_NAME = `_collections`;
@@ -27,22 +24,24 @@ function readJson(directoryName: string) {
     .map((slug) => {
       const path = join(process.cwd(), directoryName, slug);
 
-      if (existsSync(path)) {
-        const json = readFileSync(path, 'utf-8');
+      if (!existsSync(path)) {
+        return;
+      }
 
-        try {
-          const data = JSON.parse(json);
-          const realSlug = removeExtensionFromSlug(slug, JSON_EXTENSION);
+      const json = readFileSync(path, 'utf-8');
 
-          return {
-            data,
-            slug,
-            realSlug,
-          };
-        } catch (e) {
-          console.warn(`Error while reading JSON file`, e);
-          return;
-        }
+      try {
+        const data = JSON.parse(json);
+        const realSlug = removeExtensionFromSlug(slug, JSON_EXTENSION);
+
+        return {
+          data,
+          slug,
+          realSlug,
+        };
+      } catch (e) {
+        console.warn(`Error while reading JSON file`, e);
+        return;
       }
     })
     .filter(Boolean);
@@ -177,17 +176,6 @@ function filterByPublishedPostsOnly(post: BlogPost) {
   }
 
   return post.live;
-}
-
-export async function compileMdx(markdown: string) {
-  const { compile } = await import('@mdx-js/mdx');
-
-  const code = await compile(markdown, {
-    outputFormat: 'function-body',
-    rehypePlugins: [rehypeHighlight, rehypeSlug, rehypeAutoLinkHeadings],
-  });
-
-  return String(code);
 }
 
 export function getPostsByCollection(collectionSlug: string) {

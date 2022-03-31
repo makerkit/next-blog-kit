@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc",
+    "healthcheck": "npm run lint && npm run typecheck",
+    "postbuild": "npm run sitemap && npm run rss",
+    "sitemap": "next-sitemap",
+    "rss": "npx ts-node -O '{\"module\": \"commonjs\"}' -P ./tsconfig.json './lib/blog/rss-feed.ts'"
   },
   "author": {
     "email": "info@makerkit.dev",
