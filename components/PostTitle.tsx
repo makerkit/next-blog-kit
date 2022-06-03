@@ -1,9 +1,9 @@
-const PostTitle: React.FC = ({ children }) => {
+const PostTitle: React.FCC = ({ children }) => {
   return (
     <h1
-      className="text-4xl lg:text-6xl dark:text-white
-            font-extrabold tracking-tight
-            md:leading-none my-2 md:my-4"
+      className="my-2 text-4xl font-extrabold
+            tracking-tight dark:text-white
+            md:my-4 md:leading-none lg:text-6xl"
     >
       {children}
     </h1>

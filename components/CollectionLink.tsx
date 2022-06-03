@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Collection from '~/lib/blog/collection';
 
-const CollectionLink: React.FC<{
+const CollectionLink: React.FCC<{
   collection: Collection;
 }> = ({ collection }) => {
   const href = `/${collection.slug}`;

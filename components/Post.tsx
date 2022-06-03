@@ -2,12 +2,12 @@ import BlogPost from '~/lib/blog/blog-post';
 import PostHeader from '~/components/PostHeader';
 import PostBody from '~/components/PostBody';
 
-const Post: React.FC<{
+const Post: React.FCC<{
   post: BlogPost;
   content: string;
 }> = ({ post, content }) => {
   return (
-    <div className={'max-w-2xl mx-auto'}>
+    <div className={'mx-auto max-w-2xl'}>
       <article className="mb-16">
         <PostHeader post={post} />
 

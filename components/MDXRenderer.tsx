@@ -1,4 +1,4 @@
-import * as runtime from 'react/jsx-runtime.js';
+import * as runtime from 'react/jsx-runtime';
 import { runSync } from '@mdx-js/mdx';
 import MDXComponents from '~/components/MDXComponents';
 

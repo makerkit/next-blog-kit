@@ -4,7 +4,7 @@ import PostImage from '~/components/PostImage';
 import PostMetadata from '~/components/PostMetadata';
 import CollectionLink from '~/components/CollectionLink';
 
-const PostHeader: React.FC<{
+const PostHeader: React.FCC<{
   post: BlogPost;
 }> = ({ post }) => {
   return (
@@ -15,7 +15,7 @@ const PostHeader: React.FC<{
 
       <PostTitle>{post.title}</PostTitle>
 
-      <div className="mx-auto flex flex-col space-y-2 mb-4 md:mb-6">
+      <div className="mx-auto mb-4 flex flex-col space-y-2 md:mb-6">
         <PostMetadata post={post} />
       </div>
 

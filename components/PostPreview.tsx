@@ -3,7 +3,7 @@ import BlogPost from '~/lib/blog/blog-post';
 import PostImage from '~/components/PostImage';
 import PostMetadata from '~/components/PostMetadata';
 
-const PostPreview: React.FC<{
+const PostPreview: React.FCC<{
   post: BlogPost;
 }> = ({ post }) => {
   const hrefAs = `/${post.collection.slug}/${post.slug}`;
@@ -11,7 +11,7 @@ const PostPreview: React.FC<{
 
   return (
     <div
-      className={`flex flex-col shadow hover:shadow-xl transition-shadow duration-500 rounded-xl`}
+      className={`flex flex-col rounded-xl shadow transition-shadow duration-500 hover:shadow-xl`}
     >
       <div>
         <Link href={href} as={hrefAs} passHref>
@@ -22,7 +22,7 @@ const PostPreview: React.FC<{
       </div>
 
       <div
-        className={'p-4 flex flex-col space-y-2 dark:bg-black-400 rounded-b-xl'}
+        className={'flex flex-col space-y-2 rounded-b-xl p-4 dark:bg-black-400'}
       >
         <h2 className={'text-3xl font-bold'}>
           <Link href={href} as={hrefAs}>
@@ -33,7 +33,7 @@ const PostPreview: React.FC<{
         <PostMetadata post={post} />
 
         <div>
-          <p className={'text-gray-600 text-sm dark:text-gray-400'}>
+          <p className={'text-sm text-gray-600 dark:text-gray-400'}>
             <Link href={href} as={hrefAs} passHref>
               <a>{post.description}</a>
             </Link>

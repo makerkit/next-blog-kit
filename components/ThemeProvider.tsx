@@ -4,7 +4,7 @@ import { isBrowser } from '~/lib/is-browser';
 
 const shouldSetTheme = isBrowser();
 
-const ThemeProvider: React.FC = ({ children }) => {
+const ThemeProvider: React.FCC = ({ children }) => {
   if (shouldSetTheme) {
     return <BrowserThemeSetter>{children}</BrowserThemeSetter>;
   }
