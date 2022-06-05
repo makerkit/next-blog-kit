@@ -1,27 +1,26 @@
 .PostBody h1 {
-    @apply font-extrabold text-5xl mt-7 md:mt-14;
+    @apply font-extrabold text-4xl mt-10;
 }
 
 .PostBody h2 {
-    @apply font-extrabold text-4xl mt-6 md:mt-12;
+    @apply font-extrabold text-3xl mt-8;
 }
 
 .PostBody h3 {
-    @apply font-bold text-3xl mt-5 md:mt-10;
+    @apply font-bold text-2xl mt-6;
 }
 
 .PostBody h4 {
-    @apply font-semibold text-2xl mt-4 md:mt-8;
+    @apply font-bold text-xl mt-4;
 }
 
 .PostBody h5 {
-    @apply font-medium text-xl mt-3 md:mt-6;
+    @apply font-medium text-lg mt-2;
 }
 
 .PostBody h6 {
-    @apply font-medium text-lg mt-2 md:mt-4;
+    @apply font-medium text-base;
 }
-
 /**
 Tailwind "dark" variants do not work with CSS Modules
 We work it around using :global(.dark)
@@ -37,11 +36,11 @@ For more info: https://github.com/tailwindlabs/tailwindcss/issues/3258#issuecomm
 }
 
 .PostBody > p {
-    @apply text-lg leading-8 my-6;
+    @apply text-lg mt-4 mb-6;
 }
 
 .PostBody li {
-    @apply text-lg leading-8 my-2;
+    @apply text-lg my-2;
 }
 
 :global(.dark) .PostBody > p,
@@ -68,21 +67,21 @@ For more info: https://github.com/tailwindlabs/tailwindcss/issues/3258#issuecomm
 }
 
 .PostBody ul {
-    list-style: disc;
+    list-style: circle;
 
-    @apply pl-10 pb-2 mb-2;
+    @apply pl-6 pb-2 mb-2;
 }
 
 .PostBody ol {
     list-style: decimal;
 
-    @apply pl-5 pb-2 mb-2;
+    @apply pl-6 pb-2 mb-2;
 }
 
 .PostBody blockquote {
     @apply my-12 p-8 shadow-xl
-        font-medium font-sans dark:text-gray-300
-        border-l-[8px] border-primary-500;
+    font-medium font-sans dark:text-gray-300
+    border-l-[8px] border-primary-500;
 }
 
 .PostBody pre {

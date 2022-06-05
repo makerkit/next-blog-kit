@@ -15,6 +15,10 @@ const PostHeader: React.FCC<{
 
       <PostTitle>{post.title}</PostTitle>
 
+      <h2 className={'my-2 text-xl text-gray-400 md:my-4 lg:text-2xl'}>
+        {post.description}
+      </h2>
+
       <div className="mx-auto mb-4 flex flex-col space-y-2 md:mb-6">
         <PostMetadata post={post} />
       </div>
