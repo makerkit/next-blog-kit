@@ -1,6 +1,9 @@
+import dynamic from 'next/dynamic';
 import Logo from '~/components/Logo';
-import DarkModeToggle from '~/components/DarkModeToggle';
-import { isBrowser } from '~/lib/is-browser';
+
+const DarkModeToggle = dynamic(() => import('~/components/DarkModeToggle'), {
+  ssr: false,
+});
 
 const Header: React.FCC = () => {
   return (
@@ -9,7 +12,7 @@ const Header: React.FCC = () => {
         <Logo />
       </div>
 
-      {isBrowser() ? <DarkModeToggle /> : null}
+      <DarkModeToggle />
     </header>
   );
 };
